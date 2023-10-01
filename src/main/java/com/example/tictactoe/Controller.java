@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ public class Controller {
     @FXML private Button Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9;
     @FXML private AnchorPane root;
     @FXML private Label title, game_event;
+    @FXML private ImageView img;
     private final char[] index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private final char[] copy_index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private int wonBtn1, wonBtn2, wonBtn3, turn = 0;
@@ -31,6 +33,11 @@ public class Controller {
         root.setBackground(null);
 
         makeStageDraggable();
+
+        title.setOnMouseEntered(event -> scaleIn_titleLabel(title));
+        title.setOnMouseExited(event -> scaleOut_titleLabel(title));
+        img.setOnMouseEntered(event -> scaleIn_XImg(img));
+        img.setOnMouseExited(event -> scaleOut_XImg(img));
 
         for (int i = 1; i <= 9; i++) {
             final int index1 = i;
@@ -103,6 +110,35 @@ public class Controller {
         Btn.setText("");
     }
 
+    private void scaleIn_titleLabel(Label label) {
+        if(!(gameWon || turn == 9)) return;
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), label);
+        scaleIn.setToX(1.1);
+        scaleIn.setToY(1.1);
+        scaleIn.play();
+    }
+
+    private void scaleOut_titleLabel(Label label) {
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), label);
+        scaleOut.setToX(1.0);
+        scaleOut.setToY(1.0);
+        scaleOut.play();
+    }
+
+    private void scaleIn_XImg(ImageView img) {
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), img);
+        scaleIn.setToX(1.2);
+        scaleIn.setToY(1.2);
+        scaleIn.play();
+    }
+
+    private void scaleOut_XImg(ImageView img) {
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(200), img);
+        scaleOut.setToX(1.0);
+        scaleOut.setToY(1.0);
+        scaleOut.play();
+    }
+
     private void scaleIn_winBtn(Button Btn) {
         ScaleTransition scaleIn = new ScaleTransition(Duration.millis(200), Btn);
         scaleIn.setToX(1.1);
@@ -128,8 +164,7 @@ public class Controller {
         scaleIn_winBtn(buttons[i]);
     }
 
-    @FXML
-    private void restart() {
+    @FXML private void restart() {
 
         reset(Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9);
         System.arraycopy(copy_index, 0, index, 0, 10);
@@ -181,8 +216,7 @@ public class Controller {
             stage.setY(event.getScreenY() - yOffset);
         });
     }
-    @FXML
-    private void shutdown() {
+    @FXML private void shutdown() {
         Platform.exit();
     }
 }
