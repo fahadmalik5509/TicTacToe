@@ -10,13 +10,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
 public class Controller {
     @FXML private Button Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9;
     @FXML private AnchorPane root;
     @FXML private Label title;
     private final char[] index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-    private final char[] reset_index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    private final char[] copy_index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private int wonBtn1, wonBtn2, wonBtn3, turn = 0;
     private double xOffset = 0, yOffset = 0;
     private boolean gameWon = false;
@@ -119,7 +118,7 @@ public class Controller {
     private void restart() {
 
         reset(Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9);
-        System.arraycopy(reset_index, 0, index, 0, 10);
+        System.arraycopy(copy_index, 0, index, 0, 10);
         turn = 0;
         gameWon = false;
     }
