@@ -10,137 +10,120 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="400.0" prefWidth="350.0" stylesheets="@../../../css/styles.css"
-            xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.tictactoe.Controller">
-    <Button fx:id="Btn1" layoutX="28.0" layoutY="79.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn2" layoutX="135.0" layoutY="79.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn3" layoutX="242.0" layoutY="79.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn4" layoutX="28.0" layoutY="188.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn5" layoutX="135.0" layoutY="188.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn6" layoutX="242.0" layoutY="188.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn7" layoutX="28.0" layoutY="297.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn8" layoutX="135.0" layoutY="296.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Button fx:id="Btn9" layoutX="242.0" layoutY="296.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0"
-            styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
-        <font>
-            <Font size="48.0"/>
-        </font>
-        <effect>
-            <DropShadow/>
-        </effect>
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
-    <Separator layoutY="60.0" prefWidth="350.0"/>
-    <ImageView fitHeight="70.0" fitWidth="30.0" layoutX="291.0" layoutY="14.0" onMouseClicked="#shutdown"
-               pickOnBounds="true" preserveRatio="true">
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-        <Image url="@../../../Icons/X.png"/>
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="350.0" stylesheets="@../../../css/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Controller">
+    <ImageView fitHeight="386.0" fitWidth="359.0" layoutX="103.0" layoutY="100.0" opacity="0.45" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../../../Icons/1.png"/>
     </ImageView>
-    <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="28.0" layoutY="15.0" onMouseClicked="#restart"
-               pickOnBounds="true" preserveRatio="true">
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-        <Image url="@../../../Icons/O.png"/>
-    </ImageView>
-    <Label fx:id="title" layoutX="98.0" layoutY="13.0" prefHeight="34.0" prefWidth="153.0" text="Tic Tac Toe"
-           textFill="#888888">
+    <Button fx:id="Btn1" layoutX="28.0" layoutY="79.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
         <font>
-          <Font name="Franklin Gothic Medium" size="29.0"/>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn2" layoutX="135.0" layoutY="79.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn3" layoutX="242.0" layoutY="79.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn4" layoutX="28.0" layoutY="188.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn5" layoutX="135.0" layoutY="188.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn6" layoutX="242.0" layoutY="188.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn7" layoutX="28.0" layoutY="297.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn8" layoutX="135.0" layoutY="296.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Button fx:id="Btn9" layoutX="242.0" layoutY="296.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="tictactoe-button" stylesheets="@../../../css/styles.css">
+        <font>
+            <Font size="48.0" />
+        </font>
+        <effect>
+            <DropShadow />
+        </effect>
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+    <Separator layoutY="60.0" prefWidth="350.0" />
+    <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="288.0" layoutY="14.0" onMouseClicked="#shutdown" pickOnBounds="true" preserveRatio="true">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+        <Image url="@../../../Icons/X.png" />
+    </ImageView>
+    <Label fx:id="title" layoutX="32.0" layoutY="2.0" onMouseClicked="#restart" prefHeight="34.0" prefWidth="240.0" text="Tic Tac Toe" textFill="#888888">
+        <font>
+          <Font name="Franklin Gothic Medium" size="29.0" />
         </font>
     </Label>
 </AnchorPane>

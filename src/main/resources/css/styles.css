@@ -1,5 +1,7 @@
 .root{
-    -fx-background-color: #06142E;
+    -fx-background-color: #1a1a1a;
+    /*-fx-background-color: linear-gradient(#1a1a1a, #3d1524); !* Halved purple values *!*/
+    /*-fx-background-color: radial-gradient(radius 100%, #1a1a1a, #3d1524);*/
 }
 
 .tictactoe-button {
@@ -8,16 +10,16 @@
     -fx-min-height: 80px;
     -fx-max-width: 80px;
     -fx-max-height: 80px;
-    -fx-background-color: #473E66;
+    -fx-background-color: #7c2e2e;
     -fx-text-fill: #ecf0f1;
 }
 
 .tictactoe-button:hover {
-    -fx-background-color: #22274f;
+    -fx-background-color: #b64d4d;
 }
 
 .tictactoe-button:pressed {
-    -fx-background-color: #262a56;
+    -fx-background-color: #6b1414;
 }
 
 .exit-button:hover {
@@ -30,10 +32,10 @@
 
 .btn-won {
     -fx-font-size: 32px;
-    -fx-background-color: #3ec5f3;
+    -fx-background-color: #11e889;
 }
 
 .title-label {
-    -fx-font-family: 'Mouldy Cheese';
-    -fx-font-size: 28px;
+    -fx-font-family: 'HoW tO dO SoMeThInG';
+    -fx-font-size: 32px;
 }

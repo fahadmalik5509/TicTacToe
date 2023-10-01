@@ -21,7 +21,7 @@ public class Controller {
     private boolean gameWon = false;
 
     public void initialize() {
-        Font.loadFont(getClass().getResourceAsStream("/Fonts/font.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("/Fonts/fonts.ttf"), 10);
         title.getStyleClass().add("title-label");
 
         makeStageDraggable();
@@ -44,8 +44,8 @@ public class Controller {
 
     private void setButtons(Button B, int i) {
         if(!gameWon) {
-            B.setText(String.valueOf(turn % 2 == 0 ? 'X' : '0'));
-            index[i] = turn % 2 == 0 ? 'X' : '0';
+            B.setText(String.valueOf(turn % 2 == 0 ? 'X' : 'O'));
+            index[i] = turn % 2 == 0 ? 'X' : 'O';
             turn++;
             logic();
             B.setDisable(true);
@@ -106,6 +106,7 @@ public class Controller {
             wonBtn1 = a;
             wonBtn2 = b;
             wonBtn3 = c;
+            title.setText("Click to Reset");
         }
     }
 
@@ -127,9 +128,8 @@ public class Controller {
     private void reset(Button... buttons) {
         for (Button button : buttons) {
             button.setDisable(false);
-            button.setText("");
-            button.setStyle("");
             button.getStyleClass().remove("btn-won");
+            title.setText("Tic Tac Toe");
             exited(button);
         }
     }
