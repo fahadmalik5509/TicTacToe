@@ -22,7 +22,7 @@ public class Controller {
     private boolean gameWon = false;
 
     public void initialize() {
-        Font.loadFont(getClass().getResourceAsStream("/Fonts/fonts.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("/Fonts/font.ttf"), 10);
         title.getStyleClass().add("title-label");
 
         makeStageDraggable();
