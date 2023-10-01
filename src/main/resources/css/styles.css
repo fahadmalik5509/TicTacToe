@@ -1,7 +1,5 @@
 .root{
     -fx-background-color: #1a1a1a;
-    /*-fx-background-color: linear-gradient(#1a1a1a, #3d1524); !* Halved purple values *!*/
-    /*-fx-background-color: radial-gradient(radius 100%, #1a1a1a, #3d1524);*/
 }
 
 .tictactoe-button {
@@ -38,4 +36,11 @@
 .title-label {
     -fx-font-family: 'HoW tO dO SoMeThInG';
     -fx-font-size: 32px;
+}
+
+.winner-label {
+    -fx-font-family: 'HoW tO dO SoMeThInG';
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fc1443; /* You can choose your preferred text color */
 }

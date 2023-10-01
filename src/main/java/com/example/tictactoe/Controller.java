@@ -9,11 +9,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 public class Controller {
     @FXML private Button Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9;
     @FXML private AnchorPane root;
-    @FXML private Label title;
+    @FXML private Label title, game_event;
     private final char[] index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private final char[] copy_index = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     private int wonBtn1, wonBtn2, wonBtn3, turn = 0;
@@ -21,8 +26,9 @@ public class Controller {
     private boolean gameWon = false;
 
     public void initialize() {
-        Font.loadFont(getClass().getResourceAsStream("/Fonts/fonts.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("/Fonts/font.ttf"), 10);
         title.getStyleClass().add("title-label");
+        root.setBackground(null);
 
         makeStageDraggable();
 
@@ -59,7 +65,7 @@ public class Controller {
         scaleIn.setToX(1.1);
         scaleIn.setToY(1.1);
         scaleIn.play();
-        Btn.setText(turn % 2 == 0 ? "X" : "0");
+        Btn.setText(turn % 2 == 0 ? "X" : "O");
     }
 
     private void exited(Button Btn) {
@@ -98,6 +104,11 @@ public class Controller {
         checkLine(1, 5, 9); // Diagonal
         checkLine(3, 5, 7); // Reverse Diagonal
 
+        if(turn==9 && (!(gameWon))) {
+            game_event.setText("GameDraw");
+            playCustomSound("/Sounds/draw.wav");
+
+        }
     }
 
     private void checkLine(int a, int b, int c) {
@@ -107,6 +118,7 @@ public class Controller {
             wonBtn2 = b;
             wonBtn3 = c;
             title.setText("Click to Reset");
+            playCustomSound("/Sounds/win.wav");
         }
     }
 
@@ -120,19 +132,42 @@ public class Controller {
 
         reset(Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9);
         System.arraycopy(copy_index, 0, index, 0, 10);
+        title.setText("Tic Tac Toe");
+        game_event.setText("");
         turn = 0;
         gameWon = false;
-
     }
 
     private void reset(Button... buttons) {
         for (Button button : buttons) {
             button.setDisable(false);
             button.getStyleClass().remove("btn-won");
-            title.setText("Tic Tac Toe");
             exited(button);
         }
     }
+
+    private void playCustomSound(String path) {
+        try {
+            URL resource = getClass().getResource(path);
+            if (resource != null) {
+                AudioInputStream audioInputStream;
+
+                if (resource.getProtocol().equals("jar")) {
+                    audioInputStream = AudioSystem.getAudioInputStream(resource);
+                } else {
+                    audioInputStream = AudioSystem.getAudioInputStream(new File(resource.toURI()));
+                }
+
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            }
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void makeStageDraggable() {
         root.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
