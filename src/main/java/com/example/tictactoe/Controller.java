@@ -121,6 +121,7 @@ public class Controller {
         System.arraycopy(copy_index, 0, index, 0, 10);
         turn = 0;
         gameWon = false;
+
     }
 
     private void reset(Button... buttons) {
@@ -129,6 +130,7 @@ public class Controller {
             button.setText("");
             button.setStyle("");
             button.getStyleClass().remove("btn-won");
+            exited(button);
         }
     }
     private void makeStageDraggable() {
