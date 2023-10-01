@@ -106,6 +106,7 @@ public class Controller {
 
         if(turn==9 && (!(gameWon))) {
             game_event.setText("GameDraw");
+            title.setText("Click to Reset");
             playCustomSound("/Sounds/draw.wav");
 
         }
