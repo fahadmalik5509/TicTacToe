@@ -1,0 +1,39 @@
+.root{
+    -fx-background-color: #06142E;
+}
+
+.tictactoe-button {
+    -fx-font-size: 24px;
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+    -fx-max-width: 80px;
+    -fx-max-height: 80px;
+    -fx-background-color: #473E66;
+    -fx-text-fill: #ecf0f1;
+}
+
+.tictactoe-button:hover {
+    -fx-background-color: #22274f;
+}
+
+.tictactoe-button:pressed {
+    -fx-background-color: #262a56;
+}
+
+.exit-button:hover {
+    -fx-background-color: #333333;
+}
+
+.exit-button:pressed {
+    -fx-background-color: #1a1a1a;
+}
+
+.btn-won {
+    -fx-font-size: 32px;
+    -fx-background-color: #3ec5f3;
+}
+
+.title-label {
+    -fx-font-family: 'Fredoka One';
+    -fx-font-size: 28px;
+}
