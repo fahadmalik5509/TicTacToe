@@ -58,6 +58,32 @@ public class Controller {
             scaleOut_winBtn(B);
         }
     }
+    private void logic() {
+        for (int i = 0; i < 3; i++) {
+            checkLine(i * 3 + 1, i * 3 + 2, i * 3 + 3); // Rows
+            checkLine(i + 1, i + 4, i + 7); // Columns
+        }
+        checkLine(1, 5, 9); // Diagonal
+        checkLine(3, 5, 7); // Reverse Diagonal
+
+        if(turn==9 && (!(gameWon))) {
+            game_event.setText("GameDraw");
+            title.setText("Click to Reset");
+            playCustomSound("/Sounds/draw.wav");
+
+        }
+    }
+
+    private void checkLine(int a, int b, int c) {
+        if (index[a] == index[b] && index[b] == index[c]) {
+            gameWon = true;
+            wonBtn1 = a;
+            wonBtn2 = b;
+            wonBtn3 = c;
+            title.setText("Click to Reset");
+            playCustomSound("/Sounds/win.wav");
+        }
+    }
 
     private void entered(Button Btn) {
         if(gameWon) return;
@@ -94,32 +120,6 @@ public class Controller {
             highlight_winBtn(wonBtn1);
             highlight_winBtn(wonBtn2);
             highlight_winBtn(wonBtn3);
-        }
-    }
-    private void logic() {
-        for (int i = 0; i < 3; i++) {
-            checkLine(i * 3 + 1, i * 3 + 2, i * 3 + 3); // Rows
-            checkLine(i + 1, i + 4, i + 7); // Columns
-        }
-        checkLine(1, 5, 9); // Diagonal
-        checkLine(3, 5, 7); // Reverse Diagonal
-
-        if(turn==9 && (!(gameWon))) {
-            game_event.setText("GameDraw");
-            title.setText("Click to Reset");
-            playCustomSound("/Sounds/draw.wav");
-
-        }
-    }
-
-    private void checkLine(int a, int b, int c) {
-        if (index[a] == index[b] && index[b] == index[c]) {
-            gameWon = true;
-            wonBtn1 = a;
-            wonBtn2 = b;
-            wonBtn3 = c;
-            title.setText("Click to Reset");
-            playCustomSound("/Sounds/win.wav");
         }
     }
 
